@@ -73,12 +73,14 @@ fun QuadCompose(modifier: Modifier = Modifier) {
                 Text(
                     text = stringResource(R.string.quadrant_1_heading),
                     fontWeight = FontWeight.Bold,
+                    color = Color(0xFF000000),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
                 )
                 Text(
                     text = stringResource(R.string.quadrant_1_content),
-                    textAlign = TextAlign.Justify
+                    textAlign = TextAlign.Justify ,
+                    color = Color(0xFF000000)
                 )
             }
             Column(
@@ -94,12 +96,14 @@ fun QuadCompose(modifier: Modifier = Modifier) {
                 Text(
                     text = stringResource(R.string.quadrant_2_heading),
                     fontWeight = FontWeight.Bold,
+                    color = Color(0xFF000000),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
                 )
                 Text(
                     text = stringResource(R.string.quadrant_2_content),
-                    textAlign = TextAlign.Justify
+                    textAlign = TextAlign.Justify,
+                    color = Color(0xFF000000)
                 )
             }
         }
@@ -120,12 +124,14 @@ fun QuadCompose(modifier: Modifier = Modifier) {
                 Text(
                     text = stringResource(R.string.quadrant_3_heading),
                     fontWeight = FontWeight.Bold,
+                    color = Color(0xFF000000),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
                 )
                 Text(
                     text = stringResource(R.string.quadrant_3_content),
-                    textAlign = TextAlign.Justify
+                    textAlign = TextAlign.Justify,
+                    color = Color(0xFF000000)
                 )
             }
             Column(
@@ -141,12 +147,14 @@ fun QuadCompose(modifier: Modifier = Modifier) {
                 Text(
                     text = stringResource(R.string.quadrant_4_heading),
                     fontWeight = FontWeight.Bold,
+                    color = Color(0xFF000000),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
                 )
                 Text(
                     text = stringResource(R.string.quadrant_4_content),
-                    textAlign = TextAlign.Justify
+                    textAlign = TextAlign.Justify,
+                    color = Color(0xFF000000)
                 )
             }
         }
