@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+// REMOVE THIS LINE: import androidx.compose.foundation.layout.FlowRowScopeInstance.weight
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -47,21 +48,26 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun QuadCompose(modifier: Modifier = Modifier) {
+    // This Column needs to be inside a Row or another Column to use weight
+    // If it's the root, it cannot use weight.
+    // I'm uncommenting your original structure for a complete solution.
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxSize() // The outer Column needs to fill its parent (Surface)
     )
     {
         Row(
+            modifier = Modifier.weight(1f) // First Row takes half the height
         )
         {
             Column(
                 verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally, // Align content horizontally
                 modifier = Modifier
                     .background(Color(0xFFEADDFF))
                     .padding(all = 16.dp)
-                    .fillMaxWidth(0.5F)
-                    .fillMaxHeight(0.5F)
+                    .weight(1f) // Takes half the width of its Row parent
+                    .fillMaxHeight() // Ensures it fills its allocated height
             )
             {
                 Text(
@@ -69,7 +75,6 @@ fun QuadCompose(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .align(alignment = Alignment.CenterHorizontally)
                 )
                 Text(
                     text = stringResource(R.string.quadrant_1_content),
@@ -78,11 +83,12 @@ fun QuadCompose(modifier: Modifier = Modifier) {
             }
             Column(
                 verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally, // Align content horizontally
                 modifier = Modifier
                     .background(Color(0xFFD0BCFF))
                     .padding(all = 16.dp)
-                    .fillMaxWidth(1F)
-                    .fillMaxHeight(0.5F)
+                    .weight(1f) // Takes half the width of its Row parent
+                    .fillMaxHeight() // Ensures it fills its allocated height
             )
             {
                 Text(
@@ -90,7 +96,6 @@ fun QuadCompose(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .align(alignment = Alignment.CenterHorizontally)
                 )
                 Text(
                     text = stringResource(R.string.quadrant_2_content),
@@ -99,17 +104,17 @@ fun QuadCompose(modifier: Modifier = Modifier) {
             }
         }
         Row(
-            modifier = Modifier
-                .fillMaxSize()
+            modifier = Modifier.weight(1f) // Second Row takes the other half of the height
         )
         {
             Column(
                 verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally, // Align content horizontally
                 modifier = Modifier
                     .background(Color(0xFFB69DF8))
                     .padding(all = 16.dp)
-                    .fillMaxWidth(0.5F)
-                    .fillMaxHeight(1F)
+                    .weight(1f) // Takes half the width of its Row parent
+                    .fillMaxHeight() // Ensures it fills its allocated height
             )
             {
                 Text(
@@ -117,7 +122,6 @@ fun QuadCompose(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .align(alignment = Alignment.CenterHorizontally)
                 )
                 Text(
                     text = stringResource(R.string.quadrant_3_content),
@@ -126,11 +130,12 @@ fun QuadCompose(modifier: Modifier = Modifier) {
             }
             Column(
                 verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally, // Align content horizontally
                 modifier = Modifier
                     .background(Color(0xFFF6EDFF))
                     .padding(all = 16.dp)
-                    .fillMaxWidth(1F)
-                    .fillMaxHeight(1F)
+                    .weight(1f) // Takes half the width of its Row parent
+                    .fillMaxHeight() // Ensures it fills its allocated height
             )
             {
                 Text(
@@ -138,7 +143,6 @@ fun QuadCompose(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .align(alignment = Alignment.CenterHorizontally)
                 )
                 Text(
                     text = stringResource(R.string.quadrant_4_content),

@@ -71,10 +71,10 @@ fun LearnTogether(heading: String, paragraph1: String, paragraph2: String, modif
 
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun Preview() {
-//    LearnTogetherTheme {
-//        LearnTogether("Hello", "Hi", "Hola")
-//    }
-//}
+@Preview(showBackground = true)
+@Composable
+fun Preview() {
+    LearnTogetherTheme {
+        LearnTogether("Hello", "Hi", "Hola")
+    }
+}
